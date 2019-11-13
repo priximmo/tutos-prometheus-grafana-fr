@@ -1,9 +1,17 @@
+%title: Prometheus/Grafana
+%author: xavki
 
 
 # Qu'est-ce que Prometheus ?
 
 
+[Dépôt Git](https://github.com/prometheus/prometheus)
+
+[Site Officiel](https://prometheus.io/)
+
 <br>
+* langage : GO
+
 * base time series + serveur web + moteur
 
 <br>
@@ -59,9 +67,14 @@ localhost:9090
 ```
 
 <br>
-## Installation d'un node exporter (source)
+## Docker
 
 
 ```
-sudo apt-get install prometheus-node-exporter
+docker run -d --name prometheus \
+-v $PWD/etc/:/etc/prometheus/ \
+ -v $PWD/data/:/prometheus/ \
+-p 9090:9090 quay.io/prometheus/prometheus:v2.0.0
 ```
+
+

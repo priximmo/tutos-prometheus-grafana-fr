@@ -1,3 +1,5 @@
+%title: Prometheus/Grafana
+%author: xavki
 
 
 # Qu'est-ce que Grafana ?
