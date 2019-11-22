@@ -30,12 +30,6 @@ scrape_configs:
 
 # Filtres
 
-* scrape up
-
-```
-up{job="node_exporter"}
-```
-
 
 <br>
 * exemple simple (à partir de node exporter)
