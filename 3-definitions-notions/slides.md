@@ -27,6 +27,11 @@
 				* labels: définition de labels (important pour grafana / standardiser)
 					* targets : url/ip:ports
 
+-------------------------------------------------------------------------------------------------------
+
+# Prometheus : définitions et configuration
+
+
 <br>
 * Définitions : jobs et instances
 
