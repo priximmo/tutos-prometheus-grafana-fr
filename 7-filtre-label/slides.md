@@ -9,6 +9,9 @@
 
 * utilise les regex GO
 
+* conseils : https://prometheus.io/docs/practices/naming/
+
+<br>
 * labels fournis par la source ou retager par prometheus (prometheus.yml)
 
 ex :
