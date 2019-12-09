@@ -53,4 +53,13 @@ sum_over_time(node_cpu_seconds_total[3m])
 avg_over_time(node_cpu_seconds_total[3m])
 ```
 
+---------------------------------------------------------
 
+# PromQL : Offset
+
+
+* offset permet déplacer son point de référence
+
+* idéal pour comparer 2 périodes
+
+sum(http_requests_total)by (code) - sum(http_requests_total offset 5m)by (code)
