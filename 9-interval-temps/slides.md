@@ -4,6 +4,7 @@
 
 # PromQL : Temps
 
+<br>
 * Range Vector : [] 
 		- cherche tous les timesseries sur un interval de temps
 		- par défaut par rapport à maintenant
