@@ -9,38 +9,48 @@
 	* counter : valeur incrémentée
 	* gauge : valeur instantanée
 
+```
+# HELP node_load1 1m load average.
+# TYPE node_load1 gauge
+node_load1 0
+```
 
 <br>
+
+* uniquement pour la gauges
+
 * deriv : dérivée, augmentation par seconde (équivalent du rate pour les gauges)
+
+* delta : différence entre 2 timestamps
+
+----------------------------------------------------------------------------------
+
+# PromQL : Delta
+
+
+* delta = (ValueX - Value1) 
+
+```
+delta(node_load1[1m])
+```
+
+<br>
+# PromQL : Deriv
+
+* deriv = (ValueX - Value1) / (TimeX - Time1)
+
+* par unité de temps (secondes)
+
+* utile pour des estimations
+
+```
+deriv(node_load1[1m])
+```
 
 
 ----------------------------------------------------------------------------------
 
-# PromQL : Rate
+# Histogram
 
 
-* taux = (ValueX - Value1) / (TimeX - Time1)
-
-* calcul d'une évolution moyenne sur une période donnée
-
-* exemple sur 5 secondes : rate(metrics[5s])
-
-<br>
-
-# PromQL : Increase
-
-
-* augmentation = taux x nombre périodes
-
-* exemple : increase(metrics[5s]) = rate(metrics[5s]) x 5s
-
-<br>
-# Demo
-
-```
-node_network_receive_bytes_total{device="enp0s8"}
-node_network_receive_bytes_total{device="enp0s8"}[1m]
-rate(node_network_receive_bytes_total{device="enp0s8"}[1m])
-increase(node_network_receive_bytes_total{device="enp0s8"}[1m])
-rate(node_network_receive_bytes_total{device="enp0s8"}[1m]) * 60
-```
+https://www.robustperception.io/how-does-a-prometheus-histogram-work
