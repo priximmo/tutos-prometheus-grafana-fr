@@ -9,13 +9,16 @@
 
 * éviter de collecter/stocker trop de métriques
 
+* relabel : https://medium.com/quiq-blog/prometheus-relabeling-tricks-6ae62c56cbda
+
+* doc auto découverte : https://prometheus.io/docs/prometheus/latest/configuration/configuration/
 
 ----------------------------------------------------------------------------------
 
-# relabel_configs : action sur un noeud entier
+# relabel_configs : action sur un scrape
 
 
-* toutes les métriques d'un noeud
+* toutes les métriques d'un filtre
 
 <br>
 * drop de noeuds sur un label (adresse)
@@ -49,6 +52,8 @@ scrape_configs:
 
 # metric_relabel_configs : action sur une métrique
 
+<br>
+* garder que quelques métriques
 
 ```
     metric_relabel_configs:
@@ -56,6 +61,24 @@ scrape_configs:
         regex: '(node_load1|node_load15)'
         action: keep
 ```
+
+
+<br>
+* relabel : exemple réédition de ports
+
+```
+    relabel_configs:
+      - source_labels: [__meta_consul_tags]
+        regex: .*,metrics,.*
+        action: keep
+      - source_labels: ['__address__']
+        separator:     ':'
+        regex:         '(.*):(.*)'
+        target_label:  '__address__'
+        replacement:   '${1}:8080'
+```
+
+
 ----------------------------------------------------------------------------------
 
 # PromQL : par fonction 
