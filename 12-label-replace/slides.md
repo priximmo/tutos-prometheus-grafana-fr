@@ -57,7 +57,7 @@ scrape_configs:
 
 ```
     metric_relabel_configs:
-      - source_labels: [__name__]
+      - source_labels: [ __name__ ]
         regex: '(node_load1|node_load15)'
         action: keep
 ```
