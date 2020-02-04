@@ -51,8 +51,6 @@ service prometheus restart
 * ajout du template grafana
 
 
-----------------------------------------------------------------------------------
 
 
 
-https://www.martin-helmich.de/en/blog/monitoring-nginx.html

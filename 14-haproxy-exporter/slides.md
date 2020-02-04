@@ -5,6 +5,7 @@
 # Prometheus : Haproxy
 
 
+<br>
 ```
 apt install haproxy
 
@@ -13,18 +14,20 @@ defaults
   timeout server 5s
   timeout connect 5s
   timeout client 5s
-frontend frontend
-  bind *:1234
-  use_backend backend
 frontend stats
     bind *:8181
     stats enable
     stats uri /stats
-    stats refresh 10s
+    stats refresh 5s
+frontend frontend
+  bind *:1234
+  use_backend backend
 backend backend
-  server app1 127.0.0.1:8080
+  server srv1 127.0.0.1:8080
+  server srv2 127.0.0.1:8888
 
 python -m SimpleHTTPServer 8080
+python -m SimpleHTTPServer 8888
 ```
 
 

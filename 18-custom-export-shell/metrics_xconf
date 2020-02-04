@@ -1,0 +1,13 @@
+service rpi_metrics
+{
+  type = unlisted
+  port = 11111
+  socket_type = stream
+  wait = no
+  user = root
+  server = /opt/scripts/wrapper
+  disable = no
+  only_from = 0.0.0.0/0
+  log_type = FILE /dev/null
+}
+
