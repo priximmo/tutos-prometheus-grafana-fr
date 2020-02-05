@@ -5,26 +5,29 @@
 # Prometheus : PushGateway
 
 
+<br>
+* Dépot git :
 https://github.com/prometheus/pushgateway/releases/download/v1.0.0/pushgateway-1.0.0.linux-amd64.tar.gz
 
+```
 tar -xzvf pushgateway-1.0.0.linux-amd64.tar.gz
-
 useradd --no-create-home --shell /bin/false pushgateway
-
 cp pushgateway-1.0.0.linux-amd64/pushgateway /usr/local/bin/
-
 chown pushgateway:pushgateway /usr/local/bin/pushgateway
+```
 
-https://prometheus.io/download/#pushgateway
+Source : https://prometheus.io/download/#pushgateway
 
 -------------------------------------------------------------------------------------
 
+# Pushgateway : Systemd
+
+```
 cat > /etc/systemd/system/pushgateway.service << EOF
 [Unit]
 Description=Pushgateway
 Wants=network-online.target
 After=network-online.target
-
 [Service]
 User=pushgateway
 Group=pushgateway
@@ -36,21 +39,30 @@ ExecStart=/usr/local/bin/pushgateway \
     --persistence.interval=5m \
     --log.level="info" \
     --log.format="json"
-
 [Install]
 WantedBy=multi-user.target
 EOF
+```
 
+```
 systemctl daemon-reload
-
 systemctl start pushgateway
+systemctl enable pushgateway
+```
 
 -----------------------------------------------------------------------------------------
+
+# Pushgateway : envoi de datas
+
+<br>
+* test bash
 
 echo "mymetric 20.25" | curl --data-binary @- http://localhost:9091/metrics/job/my_custom_metrics/instance/xxx.com/provider/hetzner
 
 curl -L http://localhost:9091/metrics/
 
+<br>
+* en python brièvement
 
 ```
 import requests
