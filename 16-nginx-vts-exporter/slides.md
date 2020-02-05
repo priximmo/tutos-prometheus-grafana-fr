@@ -38,13 +38,13 @@ curl -fSL https://github.com/vozlt/nginx-module-vts/archive/v0.1.15.tar.gz | tar
 
 
 ```
-apt-get install make
+apt install make
 ```
 
 ```
-apt–get install libpcre3 libpcre3-dev zlib1g zlib1g-dev
+apt install libpcre3 libpcre3-dev zlib1g zlib1g-dev
 apt install build-essential checkinstall
-apt-get install -y libluajit-5.1-dev libpam0g-dev libssl-dev libluajit-5.1-dev libpam0g-dev libexpat1-dev git curl build-essential
+apt install -y libluajit-5.1-dev libpam0g-dev libssl-dev libluajit-5.1-dev libpam0g-dev libexpat1-dev git curl
 ```
 
 ------------------------------------------------------------------------------------------------
