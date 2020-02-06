@@ -4,6 +4,8 @@
 
 # Prometheus : Postgres Exporter
 
+<br>
+* Doc : https://github.com/wrouesnel/postgres_exporter
 
 <br>
 * installation postgres
