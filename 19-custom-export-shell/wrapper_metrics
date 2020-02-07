@@ -4,25 +4,23 @@
 ulimit -n 20480
 ulimit -l 512
 
-root='/opt/scripts/'
-file="$1"
+root='/opt/scripts'
 mime='text/plain'
 
-cd $root
-
-printf 'HTTP/1.1 200 OK\r\nDate: %s\r\nContent-Type: %s\r\nConnection: close\r\n\r\n' "$(date)" "$mime"
-
-for script in /opt/scripts/*.sh;do
+for script in $root/*.sh;do
   if [ -f "$script" ]; then
-    namescript=$(basename ${script} | sed s/.sh//g)
-    $script > /tmp/.$namescript.output
-
-    size=$(stat -c "%s" "/tmp/.$namescript.output")
-
-    cat /tmp/.$namescript.output
-
+    $script >> /tmp/final.metrics
     sleep 0.1
-    rm -f /tmp/.$namescript.output
+  else
+    exit 1
   fi
 done
+
+size=$(stat -c "%s" "/tmp/final.metrics")
+printf 'HTTP/1.1 200 OK\r\nDate: %s\r\nContent-Length: %s\r\nContent-Type: %s\r\nConnection: close\r\n\r\n' "$(date)" "$size" "$mime"
+cat /tmp/final.metrics
+echo -en "\r\n"
+rm -f /tmp/final.metrics
+
 exit 0
+
