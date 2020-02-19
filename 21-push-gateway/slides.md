@@ -5,6 +5,29 @@
 # Prometheus : PushGateway
 
 
+
+<br>
+* c'est quoi ? un point d'exposition de métriques
+	* réception des infos par api
+
+<br>
+* attention 
+
+```
+We only recommend using the Pushgateway in certain limited cases.
+```
+
+	* spof
+	* perte du health monitorin up
+	* gestion des métriques
+
+Doc : https://prometheus.io/docs/practices/pushing/
+
+
+--------------------------------------------------------------------
+
+# PushGateway : installation
+
 <br>
 * Dépot git :
 https://github.com/prometheus/pushgateway/releases/download/v1.0.0/pushgateway-1.0.0.linux-amd64.tar.gz
@@ -57,7 +80,15 @@ systemctl enable pushgateway
 <br>
 * test bash
 
-echo "mymetric 20.25" | curl --data-binary @- http://localhost:9091/metrics/job/my_custom_metrics/instance/xxx.com/provider/hetzner
+```
+echo "mymetric 20.25" | curl --data-binary @- http://127.0.0.1:9091/metrics/job/my_custom_metrics/instance/moninstance/provider/xavki
+```
+
+Labels :
+	* job
+	* instance
+	* provider
+
 
 curl -L http://localhost:9091/metrics/
 
@@ -67,12 +98,11 @@ curl -L http://localhost:9091/metrics/
 ```
 import requests
 job_name='my_custom_metrics'
-instance_name='10.20.0.1:9000'
-provider='hetzner'
+instance_name='192.168.59.3:9000'
+provider='xavki'
 payload_key='cpu_utilization'
 payload_value='21.90'
-response = requests.post('http://localhost:9091/metrics/job/{j}/instance/{i}/team/{t}'.format(j=job_name, i=instance_name, t=team_name), data='{k} {v}\n'.format(k=payload_key, v=payload_value))
+response = requests.post('http://127.0.0.1:9091/metrics/job/{j}/instance/{i}/team/{t}'.format(j=job_name, i=instance_name, t=team_name), data='{k} {v}\n'.format(k=payload_key, v=payload_value))
 print(response.status_code)
 ````
 
-----------------------------------------------------------------------------------------

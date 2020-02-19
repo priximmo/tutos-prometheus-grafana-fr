@@ -23,28 +23,39 @@ https://github.com/prometheus/alertmanager/
 <br>
 * création d'un user
 
+```
 useradd --no-create-home --shell /bin/false alertmanager
+```
+
 
 * création d'un répertoire de conf et datas
 
+```
 mkdir /etc/alertmanager
 mkdir -p /var/lib//alertmanager/data
 chown alertmanager:alertmanager /var/lib/alertmanager/data
+```
 
 <br>
 * download et installation:
 
+```
 wget https://github.com/prometheus/alertmanager/releases/download/v0.20.0/alertmanager-0.20.0.linux-amd64.tar.gz 
+```
 
 * placer les binaires dans e path
 
+```
 cp alertmanager-0.20.0.linux-amd64/alertmanager /usr/local/bin/
 cp alertmanager-0.20.0.linux-amd64/amtool /usr/local/bin/
+```
 
 * changement des droits 
 
+```
 chown alertmanager:alertmanager /usr/local/bin/alertmanager
 chown alertmanager:alertmanager /usr/local/bin/amtool
+```
 
 ----------------------------------------------------------------------------------------------------------
 
