@@ -8,7 +8,7 @@
 <br>
 * les règles d'alertes = prometheus
 
-* les règles de notifications = alermanager
+* les règles de notifications = alertmanager
 
 
 
@@ -22,12 +22,16 @@
 <br>
 * 2 types de rules : précalculs et les alertes
 
-doc : https://prometheus.io/docs/prometheus/latest/configuration/recording_rules/
+recording (précalculs) : https://prometheus.io/docs/prometheus/latest/configuration/recording_rules/
+
+alerting (alertes) : https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/
 
 <br>
+Alerting rules :
+
 * définitions :
 
-	* group : regroupement d'alertes auxquelles on applique les mêmes règels (intervalles...)
+	* group : regroupement d'alertes auxquelles on applique les mêmes règles (intervalles...)
 		* un nom
 
 	* rules : composé de différentes alertes (définition de caractéristiques communes : labels...)

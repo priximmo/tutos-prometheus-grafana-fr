@@ -99,7 +99,7 @@ chown alertmanager:alertmanager -R /etc/alertmanager
 
 
 <br>
-* alermanager
+* alertmanager
 
 vim /etc/systemd/system/alertmanager.service
 
