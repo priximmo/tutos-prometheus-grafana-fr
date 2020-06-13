@@ -39,4 +39,5 @@
 - 36. [PROMETHEUS - 35. LES FEDERATIONS DE SERVEURS (CLUSTER)](https://www.youtube.com/watch?v=Vz_BTmvD8P4)
 - 37. [PROMETHEUS - 36. VICTORIA-METRICS : INTRODUCTION](https://www.youtube.com/watch?v=Oe9vlvBDzDA)
 - 38. [VICTORIA-METRICS - 37. INSTALLATION ET CONFIGURATION PROMETHEUS](https://www.youtube.com/watch?v=6AIu6oA_Zag)
+- 39. [GRAFANA - 38. ALERTING : EXEMPLE DE SLACK](https://www.youtube.com/watch?v=J5e3oEFYsTs)
 
