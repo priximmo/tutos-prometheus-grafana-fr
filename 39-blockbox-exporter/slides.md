@@ -4,7 +4,16 @@
 
 # PROMETHEUS : Blackbox exporter
 
+<br>
+* Dépôt : https://github.com/prometheus/blackbox_exporter
 
+* Testing :
+    * http
+    * dns
+    * icmp
+    * tcp
+    * tls
+    * autres
 
 <br>
 * download du binaire :
@@ -26,6 +35,11 @@ sudo chmod 755 /etc/blackbox_exporter/
 sudo chown blackbox /etc/blackbox_exporter/
 ```
 
+----------------------------------------------------------------------------------------------------
+
+# PROMETHEUS : Blackbox exporter
+
+
 <br>
 * création du service systemd /etc/systemd/system/blackbox_exporter.service
 
@@ -44,31 +58,14 @@ WantedBy=multi-user.target
 
 ```
 systemctl daemon-reload
-systemctl enable node_exporter
-systemctl start node_exporter
+systemctl enable blackbox_exporter
+systemctl start blackbox_exporter
 ```
 
+----------------------------------------------------------------------------------------------------
 
-<br>
-* prometheus configuration 
+# PROMETHEUS : Blackbox exporter
 
-```
-- job_name: blackbox
-  metrics_path: /probe
-  params:
-    module: [http_2xx]
-  static_configs:
-   - targets:
-      - https://www.robustperception.io/
-      - http://prometheus.io/blog
-  relabel_configs:
-   - source_labels: [__address__]
-     target_label: __param_target
-   - source_labels: [__param_target]
-     target_label: instance
-   - target_label: __address__
-     replacement: 192.168.13.41:9115 
-```
 
 ```
 modules:
@@ -80,6 +77,21 @@ modules:
     http:
       method: POST
 ```
+
+* quelques éléments :
+    * headers
+    * valid_http_versions
+    * fail_if_ssl
+    * fail_if_not_ssl
+    * fail_if_body_not_matches_regexp
+    * fail_if_header_matches
+    * fail_if_header_not_matches
+    * tls_config
+    * preferred_ip_protocol
+
+----------------------------------------------------------------------------------------------------
+
+# PROMETHEUS : Blackbox exporter
 
 ```
 modules:
@@ -112,3 +124,31 @@ modules:
       ip_protocol_fallback: false  # no fallback to "ip6"
 
 ```
+----------------------------------------------------------------------------------------------------
+
+# PROMETHEUS : Blackbox exporter
+
+
+<br>
+* prometheus configuration 
+
+```
+- job_name: blackbox
+  metrics_path: /probe
+  params:
+    module: [http_2xx]
+  static_configs:
+   - targets:
+      - https://www.robustperception.io/
+      - http://prometheus.io/blog
+  relabel_configs:
+   - source_labels: [__address__]
+     target_label: __param_target
+   - source_labels: [__param_target]
+     target_label: instance
+   - target_label: __address__
+     replacement: 192.168.13.41:9115 
+```
+
+<br>
+* grafana : https://grafana.com/grafana/dashboards/7587
