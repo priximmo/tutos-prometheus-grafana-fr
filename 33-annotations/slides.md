@@ -7,6 +7,8 @@
 
 
 <br>
+
+
 * identifier des évènements 
 		* ponctuels
 		* plage
@@ -21,6 +23,8 @@
 # GRAFANA : Annotations
 
 <br>
+
+
 * API
 		* generate token (bearer)
 		* curl

@@ -7,6 +7,8 @@
 
 
 <br>
+
+
 * exemple avec slack.com
 
 * création d'un channel dans slack
@@ -29,13 +31,19 @@ execute_alerts = true
 # GRAFANA : Alertes
 
 <br>
+
+
 * ajout d'une alerte
 
 <br>
+
+
 * GUI : ajouter une destination (slack)
 	* alerting > notification channel > new
 
 <br>
+
+
 * créer un dashboard
 
 * ajouter un panel
@@ -46,4 +54,6 @@ execute_alerts = true
 	* sélectionner la notification channel
 
 <br>
+
+
 * test

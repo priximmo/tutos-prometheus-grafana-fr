@@ -6,9 +6,13 @@
 
 
 <br>
+
+
 * ajout interface graphique de nginx (haproxy like)
 
 <br>
+
+
 * vérifier la présence du module with-http_stub_status_module
 
 ```
@@ -16,6 +20,8 @@ nginx -V
 ```
 
 <br>
+
+
 * sinon compilation nginx 
 
 * download de la version souhaitée

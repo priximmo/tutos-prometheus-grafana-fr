@@ -5,6 +5,8 @@
 # PromQL : Temps
 
 <br>
+
+
 * Range Vector : [] 
 		- cherche tous les timesseries sur un interval de temps
 		- par défaut par rapport à maintenant
@@ -27,6 +29,8 @@
 
 
 <br>
+
+
 * données des 3 dernières minutes pour node_cpu_seconds_total :
 
 ```
@@ -42,6 +46,8 @@ date -d "@1574340307.27"
 ```
 
 <br>
+
+
 * sum_over_time : somme dans le temps
 
 ```

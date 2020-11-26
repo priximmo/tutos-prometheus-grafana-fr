@@ -6,6 +6,8 @@
 
 
 <br>
+
+
 * principe : filtre sur les process (source /proc)
 
 --------------------------------------------------------------------------------------------------
@@ -13,6 +15,8 @@
 # Configuration
 
 <br>
+
+
 * default
 
 ```
@@ -23,6 +27,8 @@ process_names:
 ```
 
 <br>
+
+
 * nom de process : /proc/xxx/stat
 ```
 process_names:
@@ -42,6 +48,8 @@ process_names:
 
 <br>
 
+
+
 ```
     {{.Comm}} contains the basename of the original executable, i.e. 2nd field in /proc/<pid>/stat
     {{.ExeBase}} contains the basename of the executable
@@ -58,6 +66,8 @@ process_names:
 
 
 <br>
+
+
 * installation
 
 ```
@@ -69,6 +79,8 @@ vim /etc/process-exporter/config.yml
 
 
 <br>
+
+
 
 ```
 docker run -d --name process_exporter -p 9256:9256 --privileged -v /proc:/host/proc -v `pwd`:/config ncabatoff/process-exporter --procfs /host/proc -config.path /config/filename.yml

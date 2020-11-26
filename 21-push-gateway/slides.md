@@ -7,10 +7,14 @@
 
 
 <br>
+
+
 * c'est quoi ? un point d'exposition de métriques
 	* réception des infos par api
 
 <br>
+
+
 * attention 
 
 ```
@@ -29,6 +33,8 @@ Doc : https://prometheus.io/docs/practices/pushing/
 # PushGateway : installation
 
 <br>
+
+
 * Dépot git :
 https://github.com/prometheus/pushgateway/releases/download/v1.0.0/pushgateway-1.0.0.linux-amd64.tar.gz
 
@@ -78,6 +84,8 @@ systemctl enable pushgateway
 # Pushgateway : envoi de datas
 
 <br>
+
+
 * test bash
 
 ```
@@ -93,6 +101,8 @@ Labels :
 curl -L http://localhost:9091/metrics/
 
 <br>
+
+
 * en python brièvement
 
 ```

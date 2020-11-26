@@ -5,9 +5,13 @@
 # Prometheus : Postgres Exporter
 
 <br>
+
+
 * Doc : https://github.com/wrouesnel/postgres_exporter
 
 <br>
+
+
 * installation postgres
 
 ```
@@ -15,6 +19,8 @@ apt install postgres-10
 ```
 
 <br>
+
+
 * ajout d'un mot de passe pour le user postgres (ou création d'un user dédié)
 
 ```
@@ -39,6 +45,8 @@ service postgresql restart
 
 
 <br>
+
+
 * lancement docker
 
 ```
@@ -46,6 +54,8 @@ docker run -d --name postgres_exporter -p 9187:9187 --net=host -e DATA_SOURCE_NA
 ```
 
 <br>
+
+
 
 * grafana :
 

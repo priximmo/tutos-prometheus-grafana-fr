@@ -7,6 +7,8 @@
 
 
 <br>
+
+
 * clone du dépôt
 
 ```
@@ -14,6 +16,8 @@ git clone https://github.com/VictoriaMetrics/VictoriaMetrics.git
 ```
 
 <br>
+
+
 * installation de docker (prérequis)
 
 ```
@@ -21,6 +25,8 @@ curl -fsSL https://get.docker.com | sh; >/dev/null
 ```
 
 <br>
+
+
 * création du binaire
 
 ```
@@ -34,6 +40,8 @@ mv bin/victoria-metrics-prod /usr/local/bin/
 # VICTORIAMETRICS : Installation
 
 <br>
+
+
 * création du user/group et directory
 
 ```
@@ -43,6 +51,8 @@ chown victoriametrics:victoriametrics /var/lib/victoriametrics /run/victoriametr
 ```
 
 <br>
+
+
 * service systemd 
 
 ```
@@ -73,6 +83,8 @@ LimitNPROC=32000
 # VICTORIAMETRICS : Installation
 
 <br>
+
+
 * lancement/init
 
 ```
@@ -81,6 +93,8 @@ systemctl start victoriametrics
 ```
 
 <br>
+
+
 * configuration de prometheus
 
 ```

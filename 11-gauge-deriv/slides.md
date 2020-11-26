@@ -5,6 +5,8 @@
 # PromQL : deriv pour gauge
 
 <br>
+
+
 * metrics :
 	* counter : valeur incrémentée
 	* gauge : valeur instantanée
@@ -16,6 +18,8 @@ node_load1 0
 ```
 
 <br>
+
+
 
 * uniquement pour la gauges
 
@@ -35,6 +39,8 @@ delta(node_load1[1m])
 ```
 
 <br>
+
+
 # PromQL : Deriv
 
 * deriv = (ValueX - Value1) / (TimeX - Time1)

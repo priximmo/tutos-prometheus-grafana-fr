@@ -5,11 +5,15 @@
 # Prometheus : nginx exporter & logs
 
 <br>
+
+
 * quelques métriques nginx
 
 * très limité
 
 <br>
+
+
 doc et dépôt : https://github.com/nginxinc/nginx-prometheus-exporter
 
 template grafana : https://github.com/nginxinc/nginx-prometheus-exporter/blob/master/grafana/README.md
@@ -21,6 +25,8 @@ template grafana : https://github.com/nginxinc/nginx-prometheus-exporter/blob/ma
 
 
 <br>
+
+
 * ajout au vhost : 
 
 ```
@@ -30,6 +36,8 @@ location = /metrics {
 ```
 
 <br>
+
+
 * installation de l'exporter (docker ou binaire) :
 
 ```
@@ -37,6 +45,8 @@ docker run -d --name nginx_exporter -p 9113:9113 nginx/nginx-prometheus-exporter
 ```
 
 <br>
+
+
 * modification de la configuration prometheus :
 
 ```
@@ -48,6 +58,8 @@ service prometheus restart
 ```
 
 <br>
+
+
 * ajout du template grafana
 
 

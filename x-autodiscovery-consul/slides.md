@@ -32,6 +32,8 @@ scrape_configs:
 
 
 <br>
+
+
 * exemple simple (à partir de node exporter)
 
 ```
@@ -39,6 +41,8 @@ node_network_receive_bytes_total{device="eth0"}
 ```
 
 <br>
+
+
 * différent de
 
 ```
@@ -47,6 +51,8 @@ node_network_receive_bytes_total{device!="eth1"}
 
 
 <br>
+
+
 * exemple regex
 
 ```
@@ -55,6 +61,8 @@ node_network_receive_bytes_total{device=~"eth0|lo"}
 ```
 
 <br>
+
+
 * multiple filtres
 
 ```

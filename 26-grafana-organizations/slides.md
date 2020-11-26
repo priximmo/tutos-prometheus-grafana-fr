@@ -7,16 +7,22 @@
 
 
 <br>
+
+
 * organization = workspace / namespace
 
 * switcher entre les organizations
 
 <br>
+
+
 * datasources / organization
 
 * dashboards / organization
 
 <br>
+
+
 Rappels :
 * roles = niveau d'action
 * organization = périmètre

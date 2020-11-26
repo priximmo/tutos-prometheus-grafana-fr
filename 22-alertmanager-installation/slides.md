@@ -6,9 +6,13 @@
 
 
 <br>
+
+
 * objectif : reçoit les alertes et les diffuses (mail, slack, mattermost, pagerduty...)
 
 <br>
+
+
 * Dépot git :
 https://github.com/prometheus/alertmanager/
 
@@ -21,6 +25,8 @@ https://github.com/prometheus/alertmanager/
 
 
 <br>
+
+
 * création d'un user
 
 ```
@@ -37,6 +43,8 @@ chown alertmanager:alertmanager /var/lib/alertmanager/data
 ```
 
 <br>
+
+
 * download et installation:
 
 ```
@@ -63,6 +71,8 @@ chown alertmanager:alertmanager /usr/local/bin/amtool
 
 
 <br>
+
+
 * edition du fichier de conf
 
 vim /etc/alertmanager/alertmanager.yml
@@ -99,6 +109,8 @@ chown alertmanager:alertmanager -R /etc/alertmanager
 
 
 <br>
+
+
 * alertmanager
 
 vim /etc/systemd/system/alertmanager.service
@@ -126,6 +138,8 @@ WantedBy=multi-user.target
 
 
 <br>
+
+
 * prometheus
 
 ```
@@ -155,6 +169,8 @@ WantedBy=multi-user.target
 
 
 <br>
+
+
 * configuration de prometheus
 
 ```

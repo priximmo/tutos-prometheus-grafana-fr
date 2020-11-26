@@ -5,6 +5,8 @@
 # PROMETHEUS : Blackbox exporter
 
 <br>
+
+
 * Dépôt : https://github.com/prometheus/blackbox_exporter
 
 * Testing :
@@ -16,6 +18,8 @@
     * autres
 
 <br>
+
+
 * download du binaire :
 
 ```
@@ -26,6 +30,8 @@ sudo mv blackbox_exporter-0.17.0.linux-amd64/blackbox_exporter /usr/bin/
 
 
 <br>
+
+
 * création directory et user
 
 ```
@@ -41,6 +47,8 @@ sudo chown blackbox /etc/blackbox_exporter/
 
 
 <br>
+
+
 * création du service systemd /etc/systemd/system/blackbox_exporter.service
 
 ```
@@ -130,6 +138,8 @@ modules:
 
 
 <br>
+
+
 * prometheus configuration 
 
 ```
@@ -151,4 +161,6 @@ modules:
 ```
 
 <br>
+
+
 * grafana : https://grafana.com/grafana/dashboards/7587

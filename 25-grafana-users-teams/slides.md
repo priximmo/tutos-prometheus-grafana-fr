@@ -7,6 +7,8 @@
 
 
 <br>
+
+
 * attention default user admin/admin
 
 * server admin > users (admin)
@@ -15,6 +17,8 @@
 		* roles : viewer / editor / admin
 
 <br>
+
+
 * teams = groupes
 		* default settings
 		* default dashboard

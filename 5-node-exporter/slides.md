@@ -6,6 +6,8 @@
 
 
 <br>
+
+
 * liste exporters : https://github.com/prometheus/prometheus/wiki/Default-port-allocations
 
 * doc node exporter : https://github.com/prometheus/node_exporter
@@ -13,6 +15,8 @@
 * binaire : https://prometheus.io/download/#node_exporter
 
 <br>
+
+
 Node Exporter : 
 
 * collecte de métriques systèmes :
@@ -33,6 +37,8 @@ Node Exporter :
 
 
 <br>
+
+
 * ajout de node exporter
 
 ```
@@ -43,6 +49,8 @@ sudo apt-get install prometheus-node-exporter
 Rq : pas forcément à jour
 
 <br>
+
+
 * avec docker
 
 ```
@@ -99,6 +107,8 @@ systemctl start node_exporter
 
 
 <br>
+
+
 * ajout du noeud
 
 ```

@@ -7,6 +7,8 @@
 
 
 <br>
+
+
 * rassembler plusieurs prometheus en 1 
 
 * filtre sur label
@@ -16,6 +18,8 @@
 Doc : https://prometheus.io/docs/prometheus/latest/federation/
 
 <br>
+
+
 * sur les prometheus "sources" / filtre external label
 
 ```
@@ -40,6 +44,8 @@ scrape_configs:
 
 
 <br>
+
+
 * sur le prometheus "collecteur"
 
 ```

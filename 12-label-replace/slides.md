@@ -5,6 +5,8 @@
 # PromQL : Manipuler les labels
 
 <br>
+
+
 * label : élément pour filtrer et typer des métriques (très utiles aussi pour grafana)
 
 * éviter de collecter/stocker trop de métriques
@@ -21,6 +23,8 @@
 * toutes les métriques d'un filtre
 
 <br>
+
+
 * drop de noeuds sur un label (adresse)
 
 ```
@@ -38,6 +42,8 @@ scrape_configs:
 ```
 
 <br>
+
+
 * keep
 
 ```
@@ -53,6 +59,8 @@ scrape_configs:
 # metric_relabel_configs : action sur une métrique
 
 <br>
+
+
 * garder que quelques métriques
 
 ```
@@ -64,6 +72,8 @@ scrape_configs:
 
 
 <br>
+
+
 * relabel : exemple réédition de ports
 
 ```
@@ -91,6 +101,8 @@ label_replace(v instant-vector, dst_label string, replacement string, src_label 
 ```
 
 <br>
+
+
 
 * exemple :
 

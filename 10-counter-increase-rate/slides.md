@@ -5,12 +5,16 @@
 # PromQL : Increase vs Rate pour Counter
 
 <br>
+
+
 * metrics :
 	* counter : valeur incrémentée
 	* gauge : valeur instantanée
 
 
 <br>
+
+
 * 2 fonctions très utiles et utilisées
 
 * travail sur une période de temps
@@ -35,6 +39,8 @@
 
 <br>
 
+
+
 # PromQL : Increase
 
 
@@ -43,6 +49,8 @@
 * exemple : increase(metrics[5s]) = rate(metrics[5s]) x 5s
 
 <br>
+
+
 # Demo
 
 ```

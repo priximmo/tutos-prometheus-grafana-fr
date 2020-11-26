@@ -6,6 +6,8 @@
 
 
 <br>
+
+
 ```
 apt install haproxy
 
@@ -37,15 +39,21 @@ python -m SimpleHTTPServer 8888
 
 
 <br>
+
+
 https://github.com/prometheus/haproxy_exporter
 
 <br>
+
+
 * se base sur l'interface graphique format csv
 
 http://192.168.59.3:8181/stats;csv
 
 
 <br>
+
+
 * run exporter :
 
 ```

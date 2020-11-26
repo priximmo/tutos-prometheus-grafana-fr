@@ -7,6 +7,8 @@
 
 
 <br>
+
+
 * trigger déclenché par prometheus (pas par alermanager)
 
 * cf vidéo 23 : rules prometheus

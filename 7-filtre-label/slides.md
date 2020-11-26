@@ -12,6 +12,8 @@
 * conseils : https://prometheus.io/docs/practices/naming/
 
 <br>
+
+
 * labels fournis par la source ou retager par prometheus (prometheus.yml)
 
 ex :
@@ -41,6 +43,8 @@ up{job="node_exporter"}
 
 
 <br>
+
+
 * exemple simple (à partir de node exporter)
 
 ```
@@ -48,6 +52,8 @@ node_network_receive_bytes_total{device="eth0"}
 ```
 
 <br>
+
+
 * différent de
 
 ```
@@ -56,6 +62,8 @@ node_network_receive_bytes_total{device!="eth1"}
 
 
 <br>
+
+
 * exemple regex
 
 ```
@@ -64,6 +72,8 @@ node_network_receive_bytes_total{device=~"eth0|lo"}
 ```
 
 <br>
+
+
 * multiple filtres
 
 ```

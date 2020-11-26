@@ -7,6 +7,8 @@
 
 
 <br>
+
+
 * TSBD : stockage à froid / long terme
 
 * Stockage longue durée pour prometheus (et pas que)
@@ -27,6 +29,8 @@
 
 
 <br>
+
+
 * Pourquoi ? 
 https://medium.com/@valyala/when-size-matters-benchmarking-victoriametrics-vs-timescale-and-influxdb-6035811952d4
 
@@ -39,4 +43,6 @@ https://medium.com/@valyala/when-size-matters-benchmarking-victoriametrics-vs-ti
 Rq: outil de benchmarck de TSDB https://github.com/timescale/tsbs
 
 <br>
+
+
 * centralisation de plusieurs prometheus

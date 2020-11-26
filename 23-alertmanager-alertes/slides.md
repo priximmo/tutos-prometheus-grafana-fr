@@ -6,6 +6,8 @@
 
 
 <br>
+
+
 * les règles d'alertes = prometheus
 
 * les règles de notifications = alertmanager
@@ -20,6 +22,8 @@
 
 
 <br>
+
+
 * 2 types de rules : précalculs et les alertes
 
 recording (précalculs) : https://prometheus.io/docs/prometheus/latest/configuration/recording_rules/
@@ -27,6 +31,8 @@ recording (précalculs) : https://prometheus.io/docs/prometheus/latest/configura
 alerting (alertes) : https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/
 
 <br>
+
+
 Alerting rules :
 
 * définitions :
