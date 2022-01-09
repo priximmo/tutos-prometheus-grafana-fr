@@ -5,63 +5,50 @@
 # PROMETHEUS : Scrape sur Annotations
 
 
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+<br>
+
+https://prometheus.io/docs/prometheus/latest/configuration/recording_rules/
+
+<br>
+
+```
+#/etc/prometheus/prometheus.yml
+rule_files:
+  - "rules.yml"
+```
+
+```
+#/etc/prometheus/rules.yml
+groups:
+  - name: mycounter2
+    rules:
+    - record: rule_mycounter2
+      expr: sum by (app) (sum(mycounter_client_orders_total)by(app))
+```
+
+----------------------------------------------------------------------------------------
+
+# PROMETHEUS : Scrape sur Annotations
+
+<br>
+
+* grâce au prometheus operator
+
+```
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
 metadata:
-  name: xavki
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    prometheus-operator-validated: "true"
+  labels:
+    app: kube-prometheus-stack
+    release: kube-prometheus-stack
+  name: mycounter
+  namespace: monitoring
 spec:
-  rules:
-  - host: xavki.kub
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: xavki
-            port:
-              number: 8080
-
----
-kind: Service
-apiVersion: v1
-metadata:
-  name: xavki
-spec:
-  selector:
-    app: xavki
-  ports:
-  - name: xavki
-    protocol: TCP
-    port: 8080
-    targetPort: 8080
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: xavki
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: xavki
-  template:
-    metadata:
-      annotations:
-        prometheus.io/scrape: "true"
-        prometheus.io/port: "8080"
-      labels:
-        app: xavki
-    spec:
-      containers:
-      - name: xavki
-        image: priximmo/flaskexporter:v0.1
-        resources:
-          requests:
-            cpu: 100m
-            memory: 100Mi
-        ports:
-        - containerPort: 8080
-
+  groups:
+  - name: mycounter
+    rules:
+    - expr: sum(mycounter_client_orders_total)by(app)
+      record: 'rule_mycounter'
+```
