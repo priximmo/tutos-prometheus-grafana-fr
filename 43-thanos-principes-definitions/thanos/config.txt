@@ -1,0 +1,7 @@
+type: "S3"
+config:
+  bucket: "prometheus"
+  endpoint: "minio.monitoring.svc.cluster.local:9000"
+  access_key: "xavki"
+  secret_key: "password"
+  insecure: true

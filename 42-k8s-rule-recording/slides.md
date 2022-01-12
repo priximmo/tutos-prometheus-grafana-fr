@@ -2,7 +2,7 @@
 %author: xavki
 
 
-# PROMETHEUS : Scrape sur Annotations
+# PROMETHEUS : Recording Rules
 
 
 <br>
@@ -28,7 +28,7 @@ groups:
 
 ----------------------------------------------------------------------------------------
 
-# PROMETHEUS : Scrape sur Annotations
+# PROMETHEUS : Recording Rules
 
 <br>
 
