@@ -1,0 +1,25 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: minio
+  namespace: monitoring
+spec:
+  releaseName: minio
+  helmVersion: v3
+  chart:
+    repository: https://helm.min.io/
+    name: minio
+    version: 8.0.5 
+  values:
+    accessKey: "xavki"
+    secretKey: "password"
+    mountPath: "/data"
+    persistence:
+      enabled: true
+      existingClaim: "minio"
+    nasgateway:
+      enabled: true
+      replicas: 1
+    livenessProbe:
+      timeoutSeconds: 5
