@@ -1,0 +1,20 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: redis
+  namespace: redis
+  labels:
+    app: redis
+spec:
+  selector:
+    app: redis
+  ports:
+  - name: redis
+    protocol: TCP
+    port: 6379
+    targetPort: 6379
+  - name: prom
+    protocol: TCP
+    port: 9121
+    targetPort: 9121
