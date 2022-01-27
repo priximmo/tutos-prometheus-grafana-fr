@@ -1,0 +1,88 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: prometheus-operator
+  namespace: monitoring
+spec:
+  releaseName: prometheus-operator
+  chart:
+    repository: https://prometheus-community.github.io/helm-charts
+    name: kube-prometheus-stack
+    #version: 12.11.3
+    version: 30.0.1
+  values:
+    prometheusOperator:
+      enabled: true
+    nodeExporter:
+      enabled: true
+    prometheus:
+      enabled: true
+      ingress:
+        enabled: true
+        hosts:
+        - prometheus.kub
+      prometheusSpec:
+        replicas: 2
+        retention: 6h
+        serviceMonitorSelectorNilUsesHelmValues: false
+        ruleSelectorNilUsesHelmValues: false
+        serviceMonitorSelector:
+          matchExpressions:
+            - {key: prometheus, operator: NotIn, values: [prom2]}
+        ruleSelector:
+          matchExpressions:
+            - {key: prometheus, operator: NotIn, values: [prom2]}
+        thanos:
+          objectStorageConfig:
+            key: thanos.yaml
+            name: thanos-objstore-config
+        prometheusExternalLabelNameClear: true
+    grafana:
+      enabled: true
+      ingress:
+        enabled: true
+        hosts:
+        - grafana.kub
+      adminPassword: password
+      additionalDataSources:
+      - name: Thanos
+        url: http://thanos-query-frontend.monitoring:9090
+        type: prometheus
+        access: proxy
+        isDefault: true
+      defaultDashboardsEnabled: true
+      sidecar:
+        datasources:
+          defaultDatasourceEnabled: false
+    kubeControllerManager:
+      enable: true
+      service:
+        enable: true
+        port: 10257
+        targetPort: 10257
+      serviceMonitor:
+        enable: true
+        https: true
+        insecureSkipVerify: true
+        serverName: 127.0.0.1
+    kube-state-metrics:
+      enabled: true
+    kubeEtcd:
+      enabled: true
+      serviceMonitor:
+        enabled: true
+        scheme: https
+        insecureSkipVerify: true
+        caFile: /etc/prometheus/secrets/etcd-certs/ca.crt
+        certFile: /etc/prometheus/secrets/etcd-certs/healthcheck-client.crt
+        keyFile: /etc/prometheus/secrets/etcd-certs/healthcheck-client.key
+    kubeScheduler:
+      service:
+        port: 10259
+        targetPort: 10259
+      serviceMonitor:
+        https: true
+        insecureSkipVerify: true
+        serverName: 127.0.0.1
+
