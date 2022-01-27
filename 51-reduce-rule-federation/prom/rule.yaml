@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  labels:
+    prometheus: prom2
+  name: xavki
+  namespace: monitoring
+spec:
+  groups:
+  - name: xavki
+    rules:
+      - expr: 'sum(mycounter_client_orders_total) by (service)'
+        record: rule_orders_total
+

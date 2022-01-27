@@ -9,7 +9,6 @@ spec:
   chart:
     repository: https://prometheus-community.github.io/helm-charts
     name: kube-prometheus-stack
-    #version: 12.11.3
     version: 30.0.1
   values:
     prometheusOperator:
@@ -33,6 +32,11 @@ spec:
         ruleSelector:
           matchExpressions:
             - {key: prometheus, operator: NotIn, values: [prom2]}
+        thanos:
+          objectStorageConfig:
+            key: thanos.yaml
+            name: thanos-objstore-config
+        prometheusExternalLabelNameClear: true
         additionalScrapeConfigs:
           - job_name: federate-prometheus2
             scrape_interval: 30s
@@ -44,11 +48,6 @@ spec:
             static_configs:
               - targets:
                 - 'prometheus-2.monitoring.svc.cluster.local:9090'
-        thanos:
-          objectStorageConfig:
-            key: thanos.yaml
-            name: thanos-objstore-config
-        prometheusExternalLabelNameClear: true
     grafana:
       enabled: true
       ingress:
@@ -96,4 +95,3 @@ spec:
         https: true
         insecureSkipVerify: true
         serverName: 127.0.0.1
-

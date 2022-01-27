@@ -1,0 +1,54 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: minio
+  namespace: monitoring
+spec:
+  releaseName: minio
+  helmVersion: v3
+  chart:
+    repository: https://helm.min.io/
+    name: minio
+    version: 8.0.5 
+  values:
+    accessKey: "xavki"
+    secretKey: "password"
+    mountPath: "/data"
+    persistence:
+      enabled: true
+      existingClaim: "minio"
+    nasgateway:
+      enabled: true
+      replicas: 1
+    livenessProbe:
+      timeoutSeconds: 5
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: minio
+  namespace: monitoring
+spec:
+  storageClassName: ""
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: minio
+spec:
+  storageClassName: ""
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: 192.168.12.20
+    path: "/srv/minio"
+
