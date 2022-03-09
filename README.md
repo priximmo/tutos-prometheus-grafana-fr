@@ -1,5 +1,6 @@
 # TUTORIELS FRANCAIS SUR PROMETHEUS/GRAFANA
 
+Playlist : https://www.youtube.com/playlist?list=PLn6POgpklwWo3_2pj5Jflqwla62P5OI8n
 
 - 1. [PROMETHEUS / GRAFANA - 0. FORMATIONS](https://www.youtube.com/watch?v=wcTr8Hm7SCQ)
 - 2. [PROMETHEUS - 1. INTRODUCTION ET INSTALLATION](https://www.youtube.com/watch?v=ti0YEPZAxMk)
@@ -19,7 +20,7 @@
 - 16. [PROMETHEUS - 15. NGINX EXPORTER MINIMALISTE](https://www.youtube.com/watch?v=G7wQEJIB6pA)
 - 17. [PROMETHEUS - 16. NGINX VTS EXPORTER](https://www.youtube.com/watch?v=v8clGEy0bFo)
 - 18. [PROMETHEUS - 17. POSTGRESQL EXPORTER](https://www.youtube.com/watch?v=XEKy6rUszzE)
-- 19. [PROMETHEUS - 18. PROCESS EXPORTER](https://www.youtube.com/watch?v=hAsV9tmis_4)
+- 19. [PROMETHEUS - 18. PROCESS EXPORTER (MONITORER LES PROCESSUS DE VOTRE SYSTEME)](https://www.youtube.com/watch?v=hAsV9tmis_4)
 - 20. [PROMETHEUS - 19. EXPORTER BASH AVEC XINETD](https://www.youtube.com/watch?v=McOvVv9BoRc)
 - 21. [PROMETHEUS - 20. NETDATA : TOUT EXPORTER](https://www.youtube.com/watch?v=-BYtt63Eqxs)
 - 22. [PROMETHEUS - 21. PUSHGATEWAY : CENTRALISATION DE METRIQUES](https://www.youtube.com/watch?v=Bao-g2k_ZIw)
@@ -31,7 +32,7 @@
 - 28. [GRAFANA - 27. PREMIER GRAPHIQUE](https://www.youtube.com/watch?v=ucuV_CIJZ7Q)
 - 29. [GRAFANA - 28. VISUALISATION : GRAPH](https://www.youtube.com/watch?v=P4ET3psR6ZQ)
 - 30. [GRAFANA - 29. VISUALISATION : STAT ET GAUGES](https://www.youtube.com/watch?v=22IsgRQEMzQ)
-- 31. [GRAFANA - 30. VISUALISATION : LE BAR GAUGE](https://www.youtube.com/watch?v=tYVL7o1-Lfc)
+- 31. [#GRAFANA - 30. VISUALISATION : LES BARRES ET LES GAUGES](https://www.youtube.com/watch?v=tYVL7o1-Lfc)
 - 32. [GRAFANA - 31. VISUALISATION : LES TABLES](https://www.youtube.com/watch?v=yvGOKk4tkv8)
 - 33. [GRAFANA - 32. DASHBOARD : LES VARIABLES](https://www.youtube.com/watch?v=N4eK3FtiRRs)
 - 34. [GRAFANA - 33. LES ANNOTATIONS : GUI OU API](https://www.youtube.com/watch?v=5HT-XS3lkAA)
@@ -40,4 +41,17 @@
 - 37. [PROMETHEUS - 36. VICTORIA-METRICS : INTRODUCTION](https://www.youtube.com/watch?v=Oe9vlvBDzDA)
 - 38. [VICTORIA-METRICS - 37. INSTALLATION ET CONFIGURATION PROMETHEUS](https://www.youtube.com/watch?v=6AIu6oA_Zag)
 - 39. [GRAFANA - 38. ALERTING : EXEMPLE DE SLACK](https://www.youtube.com/watch?v=J5e3oEFYsTs)
-
+- 40. [PROMETHEUS - 39. BLACKBOX : EXPORTER DE TESTS HTTP, DNS, TLS ET AUTRES](https://www.youtube.com/watch?v=uQCg8WA9zm4)
+- 41. [Prometheus Operator : monitorer kubernetes - #Prometheus 40](https://www.youtube.com/watch?v=05GZcXCyjY8)
+- 42. [Prometheus Operator : utilisation des annotations - #Prometheus 41](https://www.youtube.com/watch?v=Iv7q29y75fI)
+- 43. [Recording Rules : avec ou sans operator - #Prometheus 42](https://www.youtube.com/watch?v=XUYk-dbzGt0)
+- 44. [Thanos : principes et définitions - #Prometheus 43](https://www.youtube.com/watch?v=uMItY1LIWew)
+- 45. [Thanos : installation de Minio (S3) - #Prometheus 44](https://www.youtube.com/watch?v=Lv6VGAxZMAg)
+- 46. [Thanos : installation Prometheus Operateur - #Prometheus 45](https://www.youtube.com/watch?v=DL_zvtd26bU)
+- 47. [Thanos : installation sur kubernetes- #Prometheus 46](https://www.youtube.com/watch?v=SXZ9niDqsk4)
+- 48. [Thanos : Bilan, tests & points d'attention - #Prometheus 47](https://www.youtube.com/watch?v=0HOSmKJpZ2k)
+- 49. [Prometheus Operator : les Services Monitor ?? - #Prometheus 48](https://www.youtube.com/watch?v=NkDIaXxgkms)
+- 50. [Large TimeSeries - TP : App, Service Monitor et Multi-Prom - #Prometheus 50](https://www.youtube.com/watch?v=jQXhv4JVyMM)
+- 51. [Large TimeSeries - TP : Intro et Problématique - #Prometheus 49](https://www.youtube.com/watch?v=_B3PwJMXvFU)
+- 52. [Large TimeSeries - TP : Rule et Fédération - #Prometheus 51](https://www.youtube.com/watch?v=Axjh-eL08hM)
+- 53. [Grafana : DASHBOARDS en configmaps - #Prometheus 52](https://www.youtube.com/watch?v=UnauTVPGv30)
